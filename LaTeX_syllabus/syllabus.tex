@@ -1,0 +1,203 @@
+% This syllabus template was created by:
+% Brian R. Hall
+% Assistant Professor, Champlain College
+% www.brianrhall.net
+
+% Document settings
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage{multirow}
+\usepackage{setspace}
+\pagestyle{plain}
+\setlength\parindent{4pt}
+
+\begin{document}
+
+% Course information
+\begin{tabular}{ l l }
+  & \LARGE \textbf{CS 1501} \\\\
+  & \LARGE \textbf{Metaprogramming} \\
+\end{tabular}
+\vspace{10mm}
+
+% Professor information
+\begin{center}
+\begin{tabular}{ l l }
+  \multirow{6}{*}{\includegraphics[height=1.85in,width=2.5in]{14040198_10154458676878599_2951113492452685662_n.jpg}} & \\ \\
+  & \textbf{\large Maxwell Patek} \\\\
+  & \large mtp4be@virginia.edu \\
+  & \large Office Hours: TBD \\
+  & \large Thornton Stacks \\
+  & \large 434-466-5693 \\
+\end{tabular}
+\end{center}
+
+\vspace{10mm}
+
+
+% Course details
+\textbf {\large  Course Description:} Students will learn several implementations and applications of metaprogramming, starting with Python and eventually moving to other languages. Metaprogramming is the writing of programs that take in programs as input and output programs as a result. Metaprograms can sometimes even do this to themselves. Some languages, like Python, have built in features that facilitate this programming style. After this course, students will know these features, what they can accomplish, and the true power of python. More broadly, students will learn how to live DRY (don't repeat yourself). \\
+
+\textbf {Prerequisites:}  
+CS 111x and 2110, 
+or Familiarity with Object Oriented Programming and Python
+
+\textbf {Credit Hours:} 1 \\
+
+\textbf {\large Course Objectives:} \\
+At the completion of this course, students will be able to:
+\begin{enumerate} \itemsep-0.4em
+  \item Write object-oriented Python
+  \item Use functions as first-class objects
+  \item Use Python Inheritance  
+  \item Write closures and decorators
+  \item Use and write metaclasses  
+  \item Write dynamic classes and functions 
+  \item Use reflection in several languages
+  \item Use homoiconicity
+  \item Develop domain specific languages
+\end{enumerate}
+
+\textbf {\large Grade Distribution:} \\
+\hspace*{40mm}
+\begin{tabular}{ r l }
+Assignments & 50\% \\
+Take Home Final Exam  & 20\% \\
+Attendance  & 30\%
+\end{tabular} \\\\
+
+\newpage
+
+
+% Course Policies. These are just examples, modify to your liking.
+\textbf {\large Course Policies:}
+\begin{itemize}
+	\item \textbf {Lecture}
+		\begin{itemize}
+			\item Lectures will be integrated lecture-lab. ie mix of instruction and workshop style coding. 
+			\item When we code in class, I will ask students to submit their code as a form of attendance for the day.
+			\item When coding, students should have their computers out; however, I do ask that students keep computers away otherwise. 
+			\item There will be minimal need for taking notes, as I will make all lecture materials available on Collab.
+		\end{itemize}
+		\item \textbf {Assignments}
+		\begin{itemize}
+			\item There will be an assignment for each week. 
+			\item Each assignment should take no more than 2 hours.
+			\item Some assignments will be \textit{explorations} designed to be creative, unique, and fun applications of course topics.
+			\item Other assignments will be \textit{puzzles}. These puzzles are meant to be solved with metaprogramming, but no penalty will be incurred if students can solve them without metaprogramming. So that students do not stress too much over them, a certain number will be dropped.
+			\item Assignments will be made available as soon as possible, and students may start working as early as they wish.
+			\item Assignments will be due at the start of lecture the week after they are officially assigned.
+		\end{itemize}
+		\item \textbf {Late Policy}
+		\begin{itemize}
+		\item $25\%$ off per week.
+		\end{itemize}
+		\item \textbf {Final Exam}
+		\begin{itemize}
+		\item Take home.
+		\item Will cover high-level concepts and overall paradigms. 
+		\end{itemize}
+\end{itemize}
+
+% College Policies
+\textbf {\large Academic Honesty Policy:} 
+% This should be specific to your instituition, an example is provided.
+
+In the real world, there is no cheating as long as you cite your sources and your sources agree to being cited. Same goes with this course. Students are encouraged to work together and google things. 
+\\
+
+\textbf {\large Professor Sponsor}
+
+If a student has an issue with the course, grades, or instructor, he/she may contact the sponsoring professor, \textbf{Luther Tychonievich}.
+
+\newpage
+% Course Outline
+\textbf {\large Tentative Course Outline}:
+
+The weekly coverage might change as it depends on the progress of the class. 
+
+\begin{center}
+\begin{tabular}{c | l | l}
+\textbf{Week} & \textbf{Topic} & \textbf{Assignment} (due the following week)  \\
+\hline 1 & Object-Oriented Python  & Exploration: Prisoners Dilema \\
+2 & Python Inheritance & Puzzle: Dependency Injection \\
+3 & Objects as Functions & Exploration: Esoteric Print  \\
+4 & Closures & Puzzle: Limited Lines\\
+5 & Decorators & Exploration: Decorating Contest\\
+6 & The Metaclass &  Puzzle: Abstract Base Prisoner\\
+7 & Python Reflection & Puzzle: Restricted Function \\
+8 & Java Reflection & Puzzle: Breaking Visibility \\
+9 & Plysp &  Exploration: Hello World\\
+10 & Homoiconicity &  Puzzle: Plysp Macro\\
+11 & Compile-time Computation & Exploration: Esoteric Python \\
+12 & Programs Writing Programs & Exploration: PyQuine\\
+13 & Domain Specific Languages &  Exploration: Esoteric Plysp\\
+14 & Review and Conclusion & Take-Home Final Exam
+\end{tabular}
+\end{center}
+
+\vspace{10mm}
+
+\textbf {\large Assignment Descriptions}:
+
+\begin{itemize} 
+
+\item Prisoners Dilema 
+
+$\ \ \ $ Students will write an class that defines a strategy for the prisoner's dilemma. There will be a tournament with all on-time submissions, pitting instances of the students' classes against each other. Prizes for the best and worst strategies.
+
+\item Dependency Injection 
+
+$\ \ \ $ Students will use Python's Method Resolution Order (MRO) to make a subclass that overrides a 'super' dependency higher up in the inheritance tree. Overriding this dependency will prevent the "bomb from going off."
+
+\item Esoteric Print 
+
+$\ \ \ $ Students will override the built-in print function with an object that has some creative esoteric behavior. One requirement will be that print() should refuse to print the same thing 3 times in a row. Prize for the funniest print function.
+
+\item Limited Lines
+
+$\ \ \ $ I will give the students a piece of code that could benefit from the use of closures. The students will have to rewrite portions of the code with closures such that the program is smaller than the line limit.
+
+\item Decorating Contest
+
+$\ \ \ $ Write a creative decorator. Prizes for the best. Bonus points for decorating your decorators.
+
+\item Abstract Base Prisoner
+
+$\ \ \ $ Students will write a metaclass for their prisoners that will automatically add new prisoner classes to the prisoners list and will require that all prisoners implement the confess\_or\_no() method.
+
+\item Esoteric Python 
+
+$\ \ \ $ Students will write an esoteric Python Interpreter. Prizes for the most creative.
+
+\item Breaking Visibility 
+
+$\ \ \ $ I have a very secure Java gradebook application. Students will use reflection to change my private fields to public so that they can hack their grade to an A.
+
+\item Hello World in Plysp
+
+$\ \ \ $ Simple introductory assignment in a Python-implemented dialect of Lisp called Plysp.
+
+\item Plysp Macro
+
+$\ \ \ $ I will provide code with an 'infix' function that is meant to evaluate its parameters as an infix expression. Students will need to change this function into a macro in order for the code to work.
+
+\item Restricted Function
+
+$\ \ \ $ Students will write a restricted function that I can't call.
+
+\item PyQuine
+
+$\ \ \ $ Write a quine in Python. Prizes for the most creative.
+
+\item Esoteric Plysp
+
+$\ \ \ $ Students will analyze the source code for the Plysp interpreter and make esoteric changes.
+
+\end{itemize}
+
+\end{document}
+
+
+
