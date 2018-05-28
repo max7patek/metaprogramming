@@ -10,6 +10,6 @@ confirmation to the bomber that the bomb went off. Your goal is to print the
 
 You should write your code in a file called `"<computing_id>_diffuser.py"`. You
 may import anything from [bomb.py](bomb.py), but note that I will test your
-diffuser with a different *code*, so you can't just print out the code procided.
+diffuser with a different *code*, so you can't just print out the code provided.
 
 Good Luck, Have Fun!
