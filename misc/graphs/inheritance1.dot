@@ -1,0 +1,12 @@
+digraph g {
+  rankdir=BT
+  bgcolor="transparent"
+
+  A -> object;
+  tuple -> object;
+  C -> A;
+  D -> A;
+  E -> A;
+  Point -> tuple;
+
+}
