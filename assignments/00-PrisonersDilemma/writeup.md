@@ -1,4 +1,4 @@
-# Prisoner's Dilema Exploration
+# Prisoner's Dilemma Exploration
 
 Your task is to continue our group-coding activity from the first lecture.
 Implement a Prisoner class that has the following methods:
@@ -21,7 +21,9 @@ Your submissions will compete at the beginning of next class. Extra credit for t
  - `self` confesses but the other prisoner doesn't
  - the other prisoner rats `self` out, but `self` didn't confess!
 
-`__init__` needs to take in these parameters in order to make informed decisions about whether  to confess.
+You may assume that the sentences are unique.
+That way, upon your sentencing, you can determine what your accomplice decided, which will
+help your prisoner make more informed decisions for future interrogations.
 
 ### decide
 
