@@ -2,13 +2,10 @@ digraph g {
   rankdir=BT
   bgcolor="transparent"
 
-  A -> object;
-  B -> object;
-  C -> A;
+  B -> A;
   C -> B;
+  C -> D;
   D -> A;
-  D -> B;
-  E -> C;
-  E -> D;
+
 
 }
