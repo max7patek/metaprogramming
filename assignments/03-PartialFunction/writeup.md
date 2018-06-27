@@ -1,7 +1,7 @@
 # Partial Puzzle
 
 Write a function called `partial` that takes in a function, a list of positional
-arguments, and a dictionary of keyword argumens and returns a function that
+arguments, and a dictionary of keyword arguments and returns a function that
 calls the parameter function on the arguments supplied along with any new arguments.
 
 Here's an example of this function's usage:
