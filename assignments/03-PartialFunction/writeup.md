@@ -6,20 +6,23 @@ calls the parameter function on the arguments supplied along with any new argume
 
 Here's an example of this function's usage:
 
-`
-def sum(*args):
+```python
+def sum(*args, **kwargs):
   out = 0
   for i in args:
+    out += i
+  for i in kwargs.values():
     out += i
   return out
 
 p = partial(sum, 5):
+```
 
-#--------------#
+```python
 >>> p(3)
 8
->>> pp = partial(p, 10)
+>>> pp = partial(p, keyword=10)
 >>> pp(2)
 17
 
-`
+```
