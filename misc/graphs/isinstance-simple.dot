@@ -1,0 +1,20 @@
+
+
+
+
+digraph G {
+  rankdir=BT;
+  bgcolor="transparent";
+
+  a [label="[]"];
+  A [label="list"];  
+
+  a -> A;
+  a -> object;
+  A -> type;
+  object -> type
+  max -> Person;
+  max -> object;
+  Person -> type;
+
+}

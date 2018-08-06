@@ -1,0 +1,12 @@
+
+
+digraph G {
+  rankdir=BT;
+  bgcolor="transparent";
+
+  B -> A;
+  C -> A;
+  D -> C;
+  E -> D;
+  E -> B;
+}
