@@ -3,10 +3,10 @@ digraph g {
   bgcolor="transparent"
 
   A -> object;
-  tuple -> object;
+  Exception -> object;
   C -> A;
   D -> A;
   E -> A;
-  Point -> tuple;
+  MyException -> Exception;
 
 }
