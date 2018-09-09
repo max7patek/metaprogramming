@@ -32,7 +32,9 @@ It should return `True` to confess and `False` to keep quiet.
 
 ### sentence
 
-The `Sentence` method takes in a sentence in years. You may assume that this sentence is associated with the previous decision.
+When testing the prisoners, I will pair up instances and call `decide` on each one.
+The two decisions will yield a sentence, which I will pass back to your prisoner through the `sentence` method.
+You may assume that this sentence is associated with the previous decision.
 The prisoner will probably want to remember this sentence somehow so that he/she can make a more informed decision next time.
 The sentence you receive will be one of the four possibilities that were passed in through `__init__`.
 You should be able to deduce what your partner did by looking your sentence up in those possibilities.
