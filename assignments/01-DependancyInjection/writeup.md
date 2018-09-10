@@ -12,4 +12,7 @@ You should write your code in a file called `"<computing_id>_diffuser.py"`. You
 may import anything from [bomb.py](bomb.py), but note that I will test your
 diffuser with a different *code*, so you can't just print out the code provided.
 
+Running your file should cause the *code* to be printed. You can use
+[runner.py](runner.py) to test your solution.
+
 Good Luck, Have Fun!
