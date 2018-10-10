@@ -12,4 +12,6 @@ please see the [syllabus](syllabus.pdf).
 Please note that the schedule on the syllabus and first slide set needs some
 slight tweaking, so please take dates with a grain of salt.
 
+Lecture videos can be found [here](https://www.youtube.com/playlist?list=PLLet_jPomQZ-5hoX1HM-Vg_jYHGntvuw3)
+
 Good luck, have fun, may your Python be magical and ninja-like.
