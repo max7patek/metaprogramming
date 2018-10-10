@@ -2,11 +2,8 @@
 # imports
 
 import inspect
-
 import sys
-
 from pprint import pprint
-
 import functools
 
 
@@ -39,10 +36,11 @@ def set_vars(string, globals, locals):
     if len(arr) == 2:
         value = eval(arr[1], globals, locals)
         if arr[0] in locals:
+            print(type(locals))
             locals[arr[0]] = value
         else:
             globals[arr[0]] = value
-    
+
 
 
 def print_everything(frame, event, arg):
@@ -63,7 +61,7 @@ def print_everything(frame, event, arg):
             print('   ', i, '=', frame.f_locals[i])
         print('callstack:')
         for i in reversed(inspect.getouterframes(frame)):
-            print('   ',i.function + ':', 
+            print('   ',i.function + ':',
                   i.code_context[0] if i.code_context is not None else '\n',
                   end='')
         string = input('set an already declared variable or just hit enter: ')
@@ -92,9 +90,9 @@ def debug(callme):
 # testing and demo
 
 if __name__ == '__main__':
-    global foo, bar
+    global foo, bar, printer, exec_test, assign_test, inspect_test
     import itertools
-    
+
     def foo(a, b):
         c = a + b
         print(c)
@@ -102,3 +100,24 @@ if __name__ == '__main__':
     def bar(*args):
         for i in itertools.combinations(args, 2):
             foo(*i)
+
+    def printer(*args):
+        print(args)
+        return printer
+
+    def exec_test():
+        a = 1
+        exec('a = 2')
+        print(a)
+
+    def assign_test():
+        a = 1
+        locals()['a'] = 2
+        print(a)
+
+    def inspect_test():
+        a = 1
+        f = inspect.currentframe()
+        f.f_locals['a'] = 1
+        print(type(f.f_locals))
+        print(a)
