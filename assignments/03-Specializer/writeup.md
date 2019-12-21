@@ -1,6 +1,6 @@
-# Partial Puzzle
+# Specializer Puzzle
 
-Write a function called `partial` that takes in a function, a list of positional
+Write a function called `specialize` that takes in a function, a list of positional
 arguments, and a dictionary of keyword arguments and returns a function that
 calls the parameter function on the arguments supplied along with any new arguments.
 
@@ -15,13 +15,13 @@ def sum(*args, **kwargs):
     out += i
   return out
 
-p = partial(sum, 5):
+p = specialize(sum, 5):
 ```
 
 ```python
 >>> p(3)
 8
->>> pp = partial(p, keyword=10)
+>>> pp = specialize(p, keyword=10)
 >>> pp(2)
 17
 
