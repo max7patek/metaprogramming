@@ -1,4 +1,10 @@
+"""
+Run this file to test your bomb diffuser.
+"""
+
 import sys
+import builtins
 for key in sys.modules:
     sys.modules[key] = None
-import <computing id>_diffuser
+import bomb
+import diffuser
