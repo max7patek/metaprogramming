@@ -2,6 +2,23 @@
 """
 Define your print function here.
 
-Remember to disallow printing the same thing 3 times in a row.
+Remember to disallow printing the same thing n times in a row.
 """
+
+
+class Printer():
+
+    def __init__(self, num_repeats_allowed):
+        pass
+
+    # fill out here
+
+
+# example usage:
+my_print = Printer(2)
+my_print("Hello", "World", sep=" ")
+
+
+# reset built-in print here
+
 
