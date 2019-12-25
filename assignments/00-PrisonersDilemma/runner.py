@@ -2,7 +2,17 @@
 
 from os import listdir
 from os.path import isfile, join
-files = [f for f in listdir('./') if isfile(join('./', f)) and 'prisoner.py' in f and '~' not in f]
+
+def is_prisoner_file(filename):
+    f = filename
+    return all([
+        isfile(join('./', f)), 
+        'prisoner' in f,
+        f.endswith('.py'),
+        '~' not in f,
+    ])
+
+files = list(filter(is_prisoner_file, listdir('./')))
 
 print(files)
 
