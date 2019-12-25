@@ -1,8 +1,10 @@
 
 
+from metaprisoner import prisoners, MetaPrisoner
 from os import listdir
 from os.path import isfile, join
 from collections import defaultdict
+from pprint import pprint
 
 
 def is_prisoner_file(filename):
@@ -12,21 +14,20 @@ def is_prisoner_file(filename):
         'prisoner' in f,
         f.endswith('.py'),
         '~' not in f,
+        'metaprisoner' not in f,
     ])
 
 files = list(filter(is_prisoner_file, listdir('./')))
 
 print(files)
-
-prisoners = []
-
 for f in files:
-    module = __import__(f[:-3])
-    for key, val in module.__dict__.items():
-        if isinstance(val, type):
-            prisoners.append(val)
+    __import__(f[:-3]) # runs the file
+
+# In assignment 00, runner.py had to scan the modules for prisoners
+# Now, MetaPrisoner keeps track of the prisoners for us!
 
 print(prisoners)
+
 
 scoreboard = defaultdict(int)
 runs = 100
@@ -55,3 +56,29 @@ for i in range(len(prisoners)):
 for p, s in scoreboard.items():
     print(f"{p} scored {s}")
 # score indicates years sentenced (low score is better)
+
+try:
+    class IncompletePrisoner(metaclass=MetaPrisoner):
+        def __init__(self, *args):
+            pass
+        def sentence(self, *args):
+            pass
+    print("Error: was allowed to create a prisoner class without a decide method")
+    exit(1)
+except TypeError:
+    pass
+
+class NamedPrisoner(metaclass=MetaPrisoner):
+    def __init__(self, *args):
+        pass
+    def decide(self):
+        pass
+    def sentence(self, *args):
+        pass
+result = str(NamedPrisoner)
+if result != "NamedPrisoner":
+    print(f"Error: calling str(NamedPrisoner) returned \"{result}\", not \"NamedPrisoner\".") 
+    exit(1)
+
+print("All Tests Passed!!")
+
