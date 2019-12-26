@@ -9,18 +9,22 @@ you like the questions that provide the student with a code snippet and
 ask what gets printed. For example:
 
 > Question:
-> What is printed by the following code?
-> `class C:`
-> `    def __init__(self, x):`
-> `        self.x = x`
-> `a = C(3)`
-> `b = a`
-> `c = b`
-> `del a`
-> `b.x += 1`
-> `print(c.x)`
 >
+> What is printed by the following code?
+```
+class C:
+    def __init__(self, x):
+        self.x = x
+
+a = C(3)
+b = a
+c = b
+del a
+b.x += 1
+print(c.x)
+```
 > Answer:
+>
 > `4`
 
 You want to be able to generate many of these problems, but with slight 
@@ -28,22 +32,26 @@ variations to prevent cheating or for makeup tests etc. For example, here's
 a variation:
 
 > Question:
-> What is printed by the following code?
-> `class C:`
-> `    def __init__(self, x):`
-> `        self.x = x`
-> `a = C(5)`
-> `b = a`
-> `c = b`
-> `del a`
-> `b.x += 1`
-> `print(c.x)`
 >
+> What is printed by the following code?
+```
+class C:
+    def __init__(self, x):
+        self.x = x
+
+a = C(5)
+b = a
+c = b
+del a
+b.x += 1
+print(c.x)
+```
 > Answer:
+>
 > `6`
 
-You are to write a program to generate these program variations. The program
-should take the correct answer as input and output the question. In other 
+You are to write a program to generate these problem variations. The program
+should take the correct answer as input and output the problem. In other 
 words, take the string that should be printed as input, and output the code
 that prints that string. Here's an example of that program running:
 
@@ -97,7 +105,7 @@ Feel free to modify your solution to Part 1. For example, it might be
 convenient to put the logic of converting the input to the outputted code
 in a function with simple parameters and a return value. Then your script
 for Part 1 might simply be:
-'''
+```
 import sys
 
 def gen(answer):
@@ -109,5 +117,5 @@ if __name__ == "__main__":
     answer = input()
     question = gen(answer)
     print(question)
-'''
+```
 Then you could only validate that `gen` function.
