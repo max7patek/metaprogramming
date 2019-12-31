@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 OCT 2019 13:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  31 DEC 2019 16:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -245,30 +245,30 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--114
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
 
  []
 
-[2] [3] [4] (./syllabus.aux) ) 
+[2] [3] (./syllabus.aux) ) 
 Here is how much of TeX's memory you used:
- 2033 strings out of 493014
- 30029 string characters out of 6133351
- 97843 words of memory out of 5000000
- 5562 multiletter control sequences out of 15000+600000
+ 2032 strings out of 493014
+ 30011 string characters out of 6133351
+ 96843 words of memory out of 5000000
+ 5561 multiletter control sequences out of 15000+600000
  8244 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,12n,32p,657b,294s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmti10.pfb>
-Output written on syllabus.pdf (4 pages, 204423 bytes).
+</usr/local/texlive/2016/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti10.pfb>
+Output written on syllabus.pdf (3 pages, 201391 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 39 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
