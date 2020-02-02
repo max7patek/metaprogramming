@@ -17,7 +17,7 @@ f = io.StringIO()
 printer = Printer(1)
 with redirect_stdout(f):
     for s in inputs:
-        printer(s, sep="\n")
+        printer(s)
 
 outputs = list(map(str.strip, f.getvalue().split("\n")))[:-1]
 
@@ -54,7 +54,7 @@ f = io.StringIO()
 
 with redirect_stdout(f):
     for s in inputs:
-        print(s, sep="\n")
+        print(s)
 
 outputs = list(map(str.strip, f.getvalue().split("\n")))[:-1]
 

@@ -16,7 +16,7 @@ class Printer():
 
 # example usage:
 my_print = Printer(2)
-my_print("Hello", "World", sep=" ")
+my_print("Hello World")
 
 
 # reset built-in print here
