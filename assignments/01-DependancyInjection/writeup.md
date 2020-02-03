@@ -19,3 +19,9 @@ Running your file should cause the *code* to be printed. You can use
 [runner.py](runner.py) to test your solution.
 
 Good Luck, Have Fun!
+
+
+Side Note: If you're wondering why this assignment is called "Dependancy Injection", 
+I recommend this 
+[great article](https://medium.com/@suneandreasdybrodebel/pythonic-dependency-injection-a-practical-guide-83a1b1299280) 
+about this pattern.
