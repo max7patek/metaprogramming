@@ -27,16 +27,18 @@ class Immutable:
             self.__dict__[name] = val
 
 
-im = Immutable(2)
+if __name__ == "__main__":
+    im = Immutable(2)
 
-print(im.x)
-im.y = 4
-print(im.y)
-try:
-    im.y = 3
-    print("COULD RESET Y")
-except AttributeError:
-    print("Could not reset y")
+if __name__ == "__main__":
+    print(im.x)
+    im.y = 4
+    print(im.y)
+    try:
+        im.y = 3
+        print("COULD RESET Y")
+    except AttributeError:
+        print("Could not reset y")
 
 
 class Person:
@@ -44,20 +46,21 @@ class Person:
         self.__dict__.update(kwargs)
 
 
-p = Person(name="Max", age=22)
+if __name__ == "__main__":
+    p = Person(name="Max", age=22)
 
-p.talk = lambda self: print(f"I'm {self.name}")
+    p.talk = lambda self: print(f"I'm {self.name}")
 
-try:
+    try:
+        p.talk()
+        print("self was bound!?")
+    except TypeError:
+        print("TypeError: <lambda>() missing 1 required positional argument: 'self'")
+
+    del p.talk
+    Person.talk = lambda self: print(f"I'm {self.name}")
+
     p.talk()
-    print("self was bound!?")
-except TypeError:
-    print("TypeError: <lambda>() missing 1 required positional argument: 'self'")
-
-del p.talk
-Person.talk = lambda self: print(f"I'm {self.name}")
-
-p.talk()
 
 
 
@@ -70,9 +73,10 @@ class MyDesc:
 class Test:
     x = MyDesc()
 
-t = Test()
+if __name__ == "__main__":
+    t = Test()
 
-print(t.x)
+    print(t.x)
 
 
 def naive_static(function):
@@ -146,5 +150,5 @@ class DescriptPerson(metaclass=AutoInit):
 
 
 
-
-p = DescriptPerson("Max", 22)
+if __name__ == "__main__":
+    p = DescriptPerson("Max", 22)
