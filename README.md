@@ -7,7 +7,8 @@ either clone the repo or just download resources as necessary.
 
 You can find slides under [slides](slides) and assignments under
 [assignments](assignments). For more information about the class in general,
-please see the [syllabus](syllabus.pdf).
+please see the [syllabus](syllabus.pdf). [Lecture recordings](https://www.youtube.com/playlist?list=PLLet_jPomQZ-5hoX1HM-Vg_jYHGntvuw3)
+are on YouTube.
 
 Please note that the schedule on the syllabus and first slide set needs some
 slight tweaking, so please take dates with a grain of salt.
