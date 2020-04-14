@@ -1,46 +1,39 @@
 
-
-from ast import parse, unparse, dump, Import, ImportFrom, Module
-
+import sys
+from ast import parse, unparse, dump, Import, ImportFrom, Module, fix_missing_locations
 from functools import partial
-
 from collections import defaultdict
-
 from copy import deepcopy
-
 import debug_decorator
 
 
+
+
 def sort_imports(node):
-    imports = []
-    import_froms = defaultdict(list)
-    remainder = []
-    for stmnt in node.body:
-        if isinstance(stmnt, Import):
-            imports.extend(stmnt.names)
-        elif isinstance(stmnt, ImportFrom):
-            import_froms[stmnt.module].extend(stmnt.names)
-        else:
-            remainder.append(stmnt)
-
-    new_body = []
-    for key in sorted(import_froms.keys()):
-        aliases = sorted(import_froms[key], key=lambda i: i.name)
-        new_body.append(ImportFrom(module=key, names=aliases, level=0))
-    for alias in sorted(imports, key=lambda i: i.name):
-        new_body.append(Import(names=[alias]))
-    new_body.extend(remainder)
-
-    out = deepcopy(node)
-    out.body = new_body   
-    return out
-
+    """sorts the node in place"""
+    imports = [stmnt for stmnt in node.body 
+              if isinstance(stmnt, Import)]
+    imports = [name for imp in imports for name in imp.names]
+    import_froms = [stmnt for stmnt in node.body 
+                   if isinstance(stmnt, ImportFrom)]
+    remainder = [stmnt for stmnt in node.body 
+                if not (stmnt in imports or stmnt in import_froms)]
+    imports.sort(key=lambda i: i.name)
+    import_froms.sort(key=lambda i: i.module)
+    for impfrm in import_froms:
+        impfrm.names.sort(key=lambda i: i.name)
+    # print([alias.name for alias in import_froms[-1].names])
+    node.body = import_froms + imports + remainder
     
 
-with open(__file__) as self:
-    self_str = "".join(self)
-    self_node = parse(self_str)
-    sorted_self = sort_imports(self_node)
-    print(dump(sorted_self, indent=2))
-    print(unparse(sorted_self))
+if __name__ == "__main__":
+    if len(sys.argv) == 1:
+        filename = __file__
+    else:
+        filename = sys.argv[1]
+    with open(filename) as self:
+        self_str = "".join(self)
+        node = parse(self_str)
+        sort_imports(node)
+        print(unparse(node))
 
