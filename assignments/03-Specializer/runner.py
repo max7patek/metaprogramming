@@ -2,7 +2,7 @@
 Run this file to test your partial implementation.
 """
 
-from specialize import specialize
+from submission import specialize
 
 def sum(*args, **kwargs):
   out = 0

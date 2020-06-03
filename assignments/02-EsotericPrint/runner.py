@@ -6,7 +6,7 @@ from contextlib import redirect_stdout
 import io
 import sys
 
-from esoteric_print import Printer
+from submission import Printer
 
 
 inputs = ["aaa", "aaa aaa", "b", "b", "c", "c", "c"]

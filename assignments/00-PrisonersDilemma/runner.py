@@ -7,7 +7,7 @@ from collections import defaultdict
 
 def is_prisoner_file(filename):
     f = filename
-    return all([
+    return f == "submission.py" or all([
         isfile(join('./', f)), 
         'prisoner' in f,
         f.endswith('.py'),
@@ -27,6 +27,9 @@ for f in files:
             prisoners.append(val)
 
 print(prisoners)
+if len(prisoners) <= 3:
+    print("Only found example prisoners.")
+    exit(1)
 
 scoreboard = defaultdict(int)
 runs = 100

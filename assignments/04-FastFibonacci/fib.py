@@ -3,7 +3,7 @@
 Please make my `fib` function by filling out `make_fast` in `decorator.py`.
 """
 
-from decorator import make_fast
+from submission import make_fast
 from assert_called import assert_called
 
 @make_fast

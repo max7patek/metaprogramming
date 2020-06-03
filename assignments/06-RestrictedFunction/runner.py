@@ -6,7 +6,7 @@ import io
 f = io.StringIO()
 
 with redirect_stdout(f):
-    from my_file import restricted_function, main
+    from submission import restricted_function, main
 
 verify_called_count("restricted_function", 1)
 if "SECRETCODE" not in f.getvalue():

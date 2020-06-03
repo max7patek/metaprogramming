@@ -1,6 +1,6 @@
 
 from random import choice
-from metaprisoner import MetaPrisoner
+from submission import MetaPrisoner
 
 class AlwaysConfess(metaclass=MetaPrisoner):
 
