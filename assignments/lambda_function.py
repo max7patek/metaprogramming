@@ -3,7 +3,7 @@ import subprocess
 import os
 import tempfile
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = "assignments"
 TMP_DIR = tempfile.gettempdir()
 RUNNER_FILENAME = "runner.py"
 SUBMISSION_FILENAME = "submission.py"
@@ -34,10 +34,12 @@ def lambda_handler(event, context):
     
     # execute
     sp = subprocess.run(["python3", runner_path], capture_output=True)
-    if sp.returncode == 0 and "abcde" in sp.stdout.decode('utf8'):
+    if sp.returncode == 0:
         return {
             'statusCode': 200,
             'body': "OK",
+            'stdout': sp.stdout.decode('utf8'),
+            'stderr': sp.stderr.decode('utf8'),
         }
     return {
         'statusCode': 200,
