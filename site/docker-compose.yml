@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  client:
+    build: client
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./client:/client
+      - /client/node_modules
+  api:
+    build: api
+    ports:
+      - '9000:9000'
+    volumes:
+      - ./api:/api
+      - /api/node_modules
+    networks:
+      - db_network
+  mongodb:
+    image: mongo
+    volumes:
+      - mongovolume:/data/db
+    networks:
+      - db_network
+    expose:
+      - '27017'
+    command: mongod --noauth 
+    
+networks: 
+  db_network:
+    driver: bridge
+volumes:
+  mongovolume:
