@@ -17,6 +17,8 @@ services:
       - /api/node_modules
     networks:
       - db_network
+    depends_on:
+      - mongodb
   mongodb:
     image: mongo
     volumes:
