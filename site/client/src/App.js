@@ -1,6 +1,30 @@
 import React, { Component } from "react";
 import { Box, Button, Heading, Collapsible, Grommet } from 'grommet';
 import { Notification } from 'grommet-icons';
+import AceEditor from "react-ace";
+// import "ace-builds/src-min-noconflict/ext-searchbox";
+// import "ace-builds/src-min-noconflict/ext-language_tools";
+// import "ace-builds/src-noconflict/mode-jsx";
+
+
+const themes = [
+  "monokai",
+  "github",
+  "tomorrow",
+  "kuroir",
+  "twilight",
+  "xcode",
+  "textmate",
+  "solarized_dark",
+  "solarized_light",
+  "terminal"
+];
+
+require('ace-builds/src-noconflict/mode-python');
+require('ace-builds/src-noconflict/snippets/python');
+
+themes.forEach(theme => require(`ace-builds/src-noconflict/theme-${theme}`));
+
 
 const theme = {
     global: {
@@ -37,6 +61,7 @@ class App extends Component {
         this.state = {
             apiResponse: "",
             dbResponse: "",
+            userCode: "",
             showSidebar: false
         };
     }
@@ -88,11 +113,17 @@ class App extends Component {
                     </Box>
                   </Collapsible>
                   <Box flex align='center' justify='center'>
-                    app body
+                  <AceEditor
+                    mode="python"
+                    theme="github"
+                    //onChange={(newVal) => console.log(newVal)}
+                    onChange={(newVal) => this.setState({userCode: newVal})}
+                    value={this.state.userCode}
+                    name="UNIQUE_ID_OF_DIV"
+                    editorProps={{ $blockScrolling: true }}
+                  /> 
                   </Box>
                 </Box>
-                <p className="App-intro">{this.state.apiResponse}</p>
-                <p className="App-intro">{this.state.dbResponse}</p>
               </Box>
             </Grommet>
         );
