@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Box, Button, Heading, Collapsible, Grommet } from 'grommet';
-import { Notification } from 'grommet-icons';
+import { Notification, Play } from 'grommet-icons';
 import AceEditor from "react-ace";
 // import "ace-builds/src-min-noconflict/ext-searchbox";
 // import "ace-builds/src-min-noconflict/ext-language_tools";
@@ -27,31 +27,31 @@ themes.forEach(theme => require(`ace-builds/src-noconflict/theme-${theme}`));
 
 
 const theme = {
-    global: {
-      colors: {
-        brand: '#228BE6'
-      },
-      font: {
-        family: 'Roboto',
-        size: '18px',
-        height: '20px',
-      },
+  global: {
+    colors: {
+      brand: '#228BE6'
     },
-  };
+    font: {
+      family: 'Roboto',
+      size: '18px',
+      height: '20px',
+    },
+  },
+};
 
-  const AppBar = (props) => (
-    <Box
-      tag='header'
-      direction='row'
-      align='center'
-      justify='between'
-      background='brand'
-      pad={{ left: 'medium', right: 'small', vertical: 'small' }}
-      elevation='medium'
-      style={{ zIndex: '1' }}
-      {...props}
-    />
-  );
+const AppBar = (props) => (
+  <Box
+    tag='header'
+    direction='row'
+    align='center'
+    justify='between'
+    background='brand'
+    pad={{ left: 'medium', right: 'small', vertical: 'small' }}
+    elevation='medium'
+    style={{ zIndex: '1' }}
+    {...props}
+  />
+);
 
 class App extends Component {
 
@@ -64,6 +64,18 @@ class App extends Component {
             userCode: "",
             showSidebar: false
         };
+    }
+
+    submit() {
+        fetch(
+          "/submit", 
+          {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(this.state)
+          }
+        ).then(res => res.json())
+          .then(data => console.log(data))
     }
 
     // Go to API and check testAPI route for a response
@@ -95,6 +107,10 @@ class App extends Component {
                 <AppBar>
                   <Heading level='3' margin='none'>My App</Heading>
                   <Button 
+                    icon={<Play />} 
+                    onClick={() => this.submit()} 
+                  />
+                  <Button 
                     icon={<Notification />} 
                     onClick={() => this.setState({showSidebar: !this.state.showSidebar})} 
                   />
@@ -113,15 +129,28 @@ class App extends Component {
                     </Box>
                   </Collapsible>
                   <Box flex align='center' justify='center'>
-                  <AceEditor
-                    mode="python"
-                    theme="github"
-                    //onChange={(newVal) => console.log(newVal)}
-                    onChange={(newVal) => this.setState({userCode: newVal})}
-                    value={this.state.userCode}
-                    name="UNIQUE_ID_OF_DIV"
-                    editorProps={{ $blockScrolling: true }}
-                  /> 
+                    <AceEditor
+                      mode="python"
+                      theme="github"
+                      height="100%"
+                      width="100%"
+                      onChange={(newVal) => this.setState({userCode: newVal})}
+                      value={this.state.userCode}
+                      name="UNIQUE_ID_OF_DIV"
+                      editorProps={{ $blockScrolling: true }}
+                    /> 
+                  </Box>
+                  <Box 
+                    flex 
+                    width='medium'
+                    background='light-2'
+                    elevation='small'
+                    align='center'
+                    justify='center'
+                  >
+                    {this.state.apiResponse}
+                    <br/>
+                    {this.state.dbResponse}
                   </Box>
                 </Box>
               </Box>

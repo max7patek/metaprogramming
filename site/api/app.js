@@ -9,6 +9,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var testAPIRouter = require("./routes/testAPI");
 var testDBRouter = require("./routes/testDB");
+var submitRouter = require("./routes/submit");
 
 var app = express();
 
@@ -27,6 +28,8 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/testAPI", testAPIRouter);
 app.use("/testDB", testDBRouter);
+app.use("/submit", submitRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -37,6 +40,7 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
+    res.locals.error = err;
     res.locals.error = req.app.get("env") === "development" ? err : {};
 
     // render the error page

@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 let databaseConnection = "Waiting for Database response...";
 
 router.get("/", function(req, res, next) {
+    console.log("CAN YOU SEE ME")
     res.send(databaseConnection);
 });
 
